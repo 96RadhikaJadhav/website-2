@@ -19,20 +19,20 @@ jobs:
     name: Build and deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
-      name: Setup build environment
+    - name: Setup build environment
+      uses: actions/setup-node@v1
       with:
         node_version: '13.12.0'
 
-      - name: Install dependencies
+    - name: Install dependencies
       run: npm install
 
-      - name: Build code
+    - name: Build code
       run: npm run build
 
-      - uses: cloudflare/wrangler-action@1.2.0
-      name: Deploy using Wrangler
+    - name: Deploy using Wrangler
+      uses: cloudflare/wrangler-action@2.1.0
       with:
         apiToken: ${{ secrets.CF_API_TOKEN }}
