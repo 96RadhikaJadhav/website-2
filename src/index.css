@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(48deg, #c44f4a, #a45c59, #975452, #754543, #baa339, #5dc63a, #26c9de);
+  background-size: 1400% 1400%;
+  -webkit-animation: AppGradient 30s ease infinite;
+  -moz-animation: AppGradient 30s ease infinite;
+  -o-animation: AppGradient 30s ease infinite;
+  animation: AppGradient 30s ease infinite;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+@-webkit-keyframes AppGradient {
+  0%{background-position:0% 99%}
+  50%{background-position:100% 2%}
+  100%{background-position:0% 99%}
+}
+
+@-moz-keyframes AppGradient {
+  0%{background-position:0% 99%}
+  50%{background-position:100% 2%}
+  100%{background-position:0% 99%}
+}
+
+@-o-keyframes AppGradient {
+  0%{background-position:0% 99%}
+  50%{background-position:100% 2%}
+  100%{background-position:0% 99%}
+}
+
+@keyframes AppGradient {
+  0%{background-position:0% 99%}
+  50%{background-position:100% 2%}
+  100%{background-position:0% 99%}
+}
