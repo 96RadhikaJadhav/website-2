@@ -19,11 +19,10 @@ jobs:
     name: Build and deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Setup build environment
-      uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
+      name: Setup build environment
       with:
         node_version: '13.12.0'
 
@@ -33,7 +32,7 @@ jobs:
       - name: Build code
       run: npm run build
 
-      - name: Deploy to Cloudflare Workers
-      uses: cloudflare/wrangler-action@1.2.0
+      - uses: cloudflare/wrangler-action@1.2.0
+      name: Deploy using Wrangler
       with:
         apiToken: ${{ secrets.CF_API_TOKEN }}
