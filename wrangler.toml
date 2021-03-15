@@ -1,0 +1,10 @@
+name = "frontend"
+type = "webpack"
+account_id = "cc625b0bb7da5200bec0c3692cd41fab"
+workers_dev = false
+route = "3reetop.eu.org/*"
+zone_id = "39f6e9c182da61fe3643ce1712ce91fd"
+
+[site]
+bucket = "./build"
+entry-point = "workers-site"

@@ -1,0 +1,38 @@
+# This workflow will automatically run on any push to the main branch
+# It will auto-deploy pushes to Workers Sites
+#
+# There is also another workflow in this folder that will run when a PR is made
+# against the main branch, and it will deploy the PR to a .workers.dev subdomain.
+# for testing purposes, but only if the PR has been approved.
+# This is to ensure that strangers can't just deploy Workers scripts to my .workers.dev
+# subdomain.
+
+name: Production Deployment
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup build environment
+      uses: actions/setup-node@v1
+      with:
+        node_version: '13.12.0'
+
+      - name: Install dependencies
+      run: npm install
+
+      - name: Build code
+      run: npm run build
+
+      - name: Deploy to Cloudflare Workers
+      uses: cloudflare/wrangler-action@1.2.0
+      with:
+        apiToken: ${{ secrets.CF_API_TOKEN }}
