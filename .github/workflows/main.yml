@@ -19,7 +19,8 @@ jobs:
     name: Build and deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+      uses: actions/checkout@v2
 
       - name: Setup build environment
       uses: actions/setup-node@v1
